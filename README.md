@@ -9,7 +9,7 @@
 [![License][shields/pypi/license]][github/license]
 [![Python Version][shields/python/version]][pypi/homepage]
 
-**Bull-Terrier** is a cross-platform plagiarism detection software based on the method of
+**Bull-Terrier** is cross-platform plagiarism detection software based on the method of
 *non-singular likelihood estimation*. Beware... it bites!..
 
 ## Getting Started
