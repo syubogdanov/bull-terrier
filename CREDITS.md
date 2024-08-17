@@ -10,6 +10,7 @@
 | [GNU Make][21]          | [Free Software Foundation, Inc.][22] | [GNU][23]                  | [GNU General Public License][24] |
 | [poetry][25]            | [@python-poetry][26]                 | [GitHub][27]               | [MIT][28]                        |
 | [pydantic][29]          | [@pydantic][30]                      | [GitHub][31]               | [MIT][32]                        |
+| [typing_extensions][33] | [@python][34]                        | [GitHub][35]               | [PSF License Agreement][36]      |
 
 [01]: https://www.flaticon.com/free-icon/bull-terrier_3002881
 [02]: https://www.flaticon.com/authors/freepik
@@ -50,3 +51,8 @@
 [30]: https://github.com/pydantic
 [31]: https://github.com
 [32]: https://github.com/pydantic/pydantic/blob/main/LICENSE
+
+[33]: https://github.com/python/typing_extensions
+[34]: https://github.com/python
+[35]: https://github.com
+[36]: https://github.com/python/typing_extensions/blob/main/LICENSE
