@@ -30,6 +30,7 @@ classifiers = [
 [tool.poetry.dependencies]
 pydantic = "~2.7"
 python = ">=3.8, <3.13"
+typing-extensions = { version = "~4.12", python = "<3.9" }
 
 [tool.poetry.group.dev]
 optional = true
