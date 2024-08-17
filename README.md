@@ -1,5 +1,7 @@
 <h2 align="center">
-    <img src="https://raw.githubusercontent.com/syubogdanov/bull-terrier/main/branding/logo/bull-terrier.png" height="128px" width="128px">
+    <a href="https://github.com/syubogdanov/bull-terrier">
+        <img src="https://raw.githubusercontent.com/syubogdanov/bull-terrier/main/branding/logo/bull-terrier.png" height="128px" width="128px">
+    </a>
 </h2>
 
 [![PyPI Version][shields/pypi/version]][pypi/homepage]
