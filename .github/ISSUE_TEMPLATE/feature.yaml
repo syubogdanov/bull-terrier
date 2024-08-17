@@ -1,0 +1,34 @@
+---
+name: Feature Request
+description: Suggest a new feature.
+title: "[FEATURE]: <...>"
+labels:
+  - FEATURE
+body:
+  - type: checkboxes
+    attributes:
+      label: Terms
+      description: By submitting this issue, you agree to the terms.
+      options:
+        - label: I agree to follow this project's code of conduct.
+          required: true
+        - label: I confirm that the same issue has not been submitted yet.
+          required: true
+  - type: textarea
+    attributes:
+      label: What Is the Feature?
+      description: Describe what the feature is.
+      render: markdown
+      placeholder: |
+        * How does this help the community?
+        * What can the interface be like?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Comments
+      description: Links? References? Something else?
+      render: markdown
+      placeholder: <...>
+    validations:
+      required: false

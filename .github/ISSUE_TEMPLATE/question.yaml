@@ -1,0 +1,35 @@
+---
+name: Question
+description: Ask a question.
+title: "[QUESTION]: <...>"
+labels:
+  - QUESTION
+body:
+  - type: checkboxes
+    attributes:
+      label: Terms
+      description: By submitting this issue, you agree to the terms.
+      options:
+        - label: I agree to follow this project's code of conduct.
+          required: true
+        - label: I confirm that the same issue has not been submitted yet.
+          required: true
+  - type: textarea
+    attributes:
+      label: What Is the Question?
+      description: Describe what the question is.
+      render: markdown
+      placeholder: |
+        * What happened?
+        * Should this be added to the FAQ?
+        * Should this be added to the examples?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Comments
+      description: Links? References? Something else?
+      render: markdown
+      placeholder: <...>
+    validations:
+      required: false

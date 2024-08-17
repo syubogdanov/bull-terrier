@@ -1,0 +1,52 @@
+# Credits Section
+
+| Name                    | Author                               | Web-Service                | License                          |
+|-------------------------|--------------------------------------|----------------------------|----------------------------------|
+| [Bull-terrier Icon][01] | [@freepik][02]                       | [Flaticon][03]             | [Flaticon][04]                   |
+| [Code of Conduct][05]   | [Coraline Ada Ehmke][06]             | [Contributor Covenant][07] | [CC BY 4.0][08]                  |
+| [mypy][09]              | [@python][10]                        | [GitHub][11]               | [MIT][12]                        |
+| [ruff][13]              | [@astral-sh][14]                     | [GitHub][15]               | [MIT][16]                        |
+| [pre-commit-hooks][17]  | [@pre-commit][18]                    | [GitHub][19]               | [MIT][20]                        |
+| [GNU Make][21]          | [Free Software Foundation, Inc.][22] | [GNU][23]                  | [GNU General Public License][24] |
+| [poetry][25]            | [@python-poetry][26]                 | [GitHub][27]               | [MIT][28]                        |
+| [pydantic][29]          | [@pydantic][30]                      | [GitHub][31]               | [MIT][32]                        |
+
+[01]: https://www.flaticon.com/free-icon/bull-terrier_3002881
+[02]: https://www.flaticon.com/authors/freepik
+[03]: https://www.flaticon.com
+[04]: https://www.freepikcompany.com/legal
+
+[05]: https://www.contributor-covenant.org/version/2/1/code_of_conduct
+[06]: https://where.coraline.codes
+[07]: https://www.contributor-covenant.org
+[08]: https://github.com/EthicalSource/contributor_covenant/blob/release/LICENSE.md
+
+[09]: https://github.com/python/mypy
+[10]: https://github.com/python
+[11]: https://github.com
+[12]: https://github.com/python/mypy/blob/master/LICENSE
+
+[13]: https://github.com/astral-sh/ruff
+[14]: https://github.com/astral-sh
+[15]: https://github.com
+[16]: https://github.com/astral-sh/ruff/blob/main/LICENSE
+
+[17]: https://github.com/pre-commit/pre-commit-hooks
+[18]: https://github.com/pre-commit
+[19]: https://github.com
+[20]: https://github.com/pre-commit/pre-commit-hooks/blob/main/LICENSE
+
+[21]: https://www.gnu.org/software/make
+[22]: https://www.gnu.org/software/make/#mission-statement
+[23]: https://www.gnu.org/
+[24]: https://www.gnu.org/licenses/gpl-3.0.en.html
+
+[25]: https://github.com/python-poetry/poetry
+[26]: https://github.com/python-poetry
+[27]: https://github.com
+[28]: https://github.com/python-poetry/poetry/blob/main/LICENSE
+
+[29]: https://github.com/pydantic/pydantic
+[30]: https://github.com/pydantic
+[31]: https://github.com
+[32]: https://github.com/pydantic/pydantic/blob/main/LICENSE
