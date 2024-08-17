@@ -10,6 +10,7 @@ license = "MIT"
 authors = ["Sergei Bogdanov <syubogdanov@outlook.com>"]
 maintainers = ["Sergei Bogdanov <syubogdanov@outlook.com>"]
 readme = "README.md"
+homepage = "https://github.com/syubogdanov/bull-terrier"
 repository = "https://github.com/syubogdanov/bull-terrier"
 documentation = "https://github.com/syubogdanov/bull-terrier/tree/main/docs/"
 classifiers = [
