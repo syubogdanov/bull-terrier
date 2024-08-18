@@ -1,16 +1,17 @@
 # Credits Section
 
-| Name                    | Author                               | Web-Service                | License                          |
-|-------------------------|--------------------------------------|----------------------------|----------------------------------|
-| [Bull-terrier Icon][01] | [@freepik][02]                       | [Flaticon][03]             | [Flaticon][04]                   |
-| [Code of Conduct][05]   | [Coraline Ada Ehmke][06]             | [Contributor Covenant][07] | [CC BY 4.0][08]                  |
-| [mypy][09]              | [@python][10]                        | [GitHub][11]               | [MIT][12]                        |
-| [ruff][13]              | [@astral-sh][14]                     | [GitHub][15]               | [MIT][16]                        |
-| [pre-commit-hooks][17]  | [@pre-commit][18]                    | [GitHub][19]               | [MIT][20]                        |
-| [GNU Make][21]          | [Free Software Foundation, Inc.][22] | [GNU][23]                  | [GNU General Public License][24] |
-| [poetry][25]            | [@python-poetry][26]                 | [GitHub][27]               | [MIT][28]                        |
-| [pydantic][29]          | [@pydantic][30]                      | [GitHub][31]               | [MIT][32]                        |
-| [typing_extensions][33] | [@python][34]                        | [GitHub][35]               | [PSF License Agreement][36]      |
+| Name                     | Author                               | Web-Service                | License                          |
+|--------------------------|--------------------------------------|----------------------------|----------------------------------|
+| [Bull-terrier Icon][01]  | [@freepik][02]                       | [Flaticon][03]             | [Flaticon][04]                   |
+| [Code of Conduct][05]    | [Coraline Ada Ehmke][06]             | [Contributor Covenant][07] | [CC BY 4.0][08]                  |
+| [mypy][09]               | [@python][10]                        | [GitHub][11]               | [MIT][12]                        |
+| [ruff][13]               | [@astral-sh][14]                     | [GitHub][15]               | [MIT][16]                        |
+| [pre-commit-hooks][17]   | [@pre-commit][18]                    | [GitHub][19]               | [MIT][20]                        |
+| [GNU Make][21]           | [Free Software Foundation, Inc.][22] | [GNU][23]                  | [GNU General Public License][24] |
+| [poetry][25]             | [@python-poetry][26]                 | [GitHub][27]               | [MIT][28]                        |
+| [pydantic][29]           | [@pydantic][30]                      | [GitHub][31]               | [MIT][32]                        |
+| [typing_extensions][33]  | [@python][34]                        | [GitHub][35]               | [PSF License Agreement][36]      |
+| [eth-pydantic-types][37] | [@ApeWorX][38]                       | [GitHub][39]               | [Apache-2.0][40]                 |
 
 [01]: https://www.flaticon.com/free-icon/bull-terrier_3002881
 [02]: https://www.flaticon.com/authors/freepik
@@ -56,3 +57,8 @@
 [34]: https://github.com/python
 [35]: https://github.com
 [36]: https://github.com/python/typing_extensions/blob/main/LICENSE
+
+[37]: https://github.com/ApeWorX/eth-pydantic-types
+[38]: https://github.com/ApeWorX
+[39]: https://github.com
+[40]: https://github.com/ApeWorX/eth-pydantic-types/blob/main/LICENSE
