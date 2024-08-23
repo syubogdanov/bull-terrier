@@ -3,6 +3,8 @@ import sys
 
 from pydantic import AfterValidator
 
+from bull_terrier.domain.exceptions import GitError
+
 
 if sys.version_info >= (3, 9):
     from typing import Annotated
@@ -21,7 +23,7 @@ def _validate(value: str) -> str:  # noqa: C901
     """
     if not value:
         detail = "The reference name cannot be empty"
-        raise ValueError(detail)
+        raise GitError(detail)
 
     if "/." in value or any(component.endswith(".lock") for component in value.split("/")):
         detail = (
@@ -29,11 +31,11 @@ def _validate(value: str) -> str:  # noqa: C901
             "(directory) grouping, but no slash-separated component can"
             "begin with a dot '.' or end with the sequence '.lock'"
         )
-        raise ValueError(detail)
+        raise GitError(detail)
 
     if ".." in value:
         detail = "The reference name cannot have two consecutive dots '..' anywhere"
-        raise ValueError(detail)
+        raise GitError(detail)
 
     if re.search("[\000-\037\177 ~^:]", value):
         detail = (
@@ -41,37 +43,37 @@ def _validate(value: str) -> str:  # noqa: C901
             "bytes whose values are lower than '\\040', or '\\177'), space,"
             " tilde '~', caret '^', or colon ':' anywhere"
         )
-        raise ValueError(detail)
+        raise GitError(detail)
 
-    if any(sign in value for sign in ["?", "*", "["]):
+    if any(char in value for char in ["?", "*", "["]):
         detail = (
             "The reference name cannot have question-mark '?',"
             " asterisk '*', or open bracket '[' anywhere"
         )
-        raise ValueError(detail)
+        raise GitError(detail)
 
     if value.startswith("/") or value.endswith("/") or "//" in value:
         detail = (
             "The reference name cannot begin or end with a slash"
             " '/' or contain multiple consecutive slashes"
         )
-        raise ValueError(detail)
+        raise GitError(detail)
 
     if value.endswith("."):
         detail = "The reference name cannot end with a dot '.'"
-        raise ValueError(detail)
+        raise GitError(detail)
 
     if "@{" in value:
         detail = "The reference name cannot contain a sequence '@{'"
-        raise ValueError(detail)
+        raise GitError(detail)
 
     if value == "@":
         detail = "The reference name cannot be a single character '@'"
-        raise ValueError(detail)
+        raise GitError(detail)
 
     if "\\" in value:
         detail = "The reference name cannot contain a '\\'"
-        raise ValueError(detail)
+        raise GitError(detail)
 
     return value
 

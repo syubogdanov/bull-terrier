@@ -2,6 +2,8 @@ import sys
 
 from pydantic import AfterValidator
 
+from bull_terrier.domain.exceptions import GitHubError
+
 
 if sys.version_info >= (3, 9):
     from typing import Annotated
@@ -19,18 +21,18 @@ def _validate(value: str) -> str:
             f"The GitHub username must be at least {_MIN_LENGTH}"
             f" and at most {_MAX_LENGTH} characters"
         )
-        raise ValueError(detail)
+        raise GitHubError(detail)
 
     if not all(char.isalnum() or char == "-" for char in value):
         detail = "The GitHub username can only consist of alphanumeric characters or hyphens '-'"
-        raise ValueError(detail)
+        raise GitHubError(detail)
 
     if value.startswith("-") or value.endswith("-") or "--" in value:
         detail = (
             "The GitHub username cannot begin or end with a "
             "hyphen or contain multiple consecutive hyphens"
         )
-        raise ValueError(detail)
+        raise GitHubError(detail)
 
     return value
 

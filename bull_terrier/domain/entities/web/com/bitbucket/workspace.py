@@ -2,6 +2,8 @@ import sys
 
 from pydantic import AfterValidator
 
+from bull_terrier.domain.exceptions import BitbucketError
+
 
 if sys.version_info >= (3, 9):
     from typing import Annotated
@@ -19,14 +21,14 @@ def _validate(value: str) -> str:
             f"The Bitbucket workspace name must be at least {_MIN_LENGTH}"
             f" and at most {_MAX_LENGTH} characters"
         )
-        raise ValueError(detail)
+        raise BitbucketError(detail)
 
     if not all(char.isalnum() or char in {"-", "_"} for char in value):
         detail = (
             "The Bitbucket workspace name can only contain ASCII"
             " letters, digits, hyphens '-', and underscores '_'"
         )
-        raise ValueError(detail)
+        raise BitbucketError(detail)
 
     return value
 
