@@ -68,12 +68,12 @@ target-version = "py38"
 select = ["ALL"]
 ignore = ["D100", "D104"]
 
+[tool.ruff.lint.flake8-type-checking]
+runtime-evaluated-base-classes = ["pydantic.BaseModel"]
+
 [tool.ruff.lint.isort]
 lines-after-imports = 2
 lines-between-types = 1
-
-[tool.ruff.lint.per-file-ignores]
-"bull_terrier/domain/entities/*" = ["TCH001"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "numpy"
