@@ -29,6 +29,8 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
+aiofiles = "~24.1"
+aiohttp = "~3.10"
 eth-pydantic-types = "~0.1.0"
 pydantic = "~2.7"
 python = ">=3.8, <3.13"
@@ -77,3 +79,6 @@ lines-between-types = 1
 
 [tool.ruff.lint.pydocstyle]
 convention = "numpy"
+
+[tool.ruff.lint.pylint]
+max-args = 8

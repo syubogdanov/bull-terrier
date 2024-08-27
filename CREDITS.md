@@ -12,6 +12,8 @@
 | [pydantic][29]           | [@pydantic][30]                      | [GitHub][31]               | [MIT][32]                        |
 | [typing_extensions][33]  | [@python][34]                        | [GitHub][35]               | [PSF License Agreement][36]      |
 | [eth-pydantic-types][37] | [@ApeWorX][38]                       | [GitHub][39]               | [Apache-2.0][40]                 |
+| [aiohttp][41]            | [@aio-libs][42]                      | [GitHub][43]               | [Apache-2.0][44]                 |
+| [aiofiles][45]           | [@Tinche][46]                        | [GitHub][47]               | [Apache-2.0][48]                 |
 
 [01]: https://www.flaticon.com/free-icon/bull-terrier_3002881
 [02]: https://www.flaticon.com/authors/freepik
@@ -62,3 +64,13 @@
 [38]: https://github.com/ApeWorX
 [39]: https://github.com
 [40]: https://github.com/ApeWorX/eth-pydantic-types/blob/main/LICENSE
+
+[41]: https://github.com/aio-libs/aiohttp
+[42]: https://github.com/aio-libs
+[43]: https://github.com
+[44]: https://github.com/aio-libs/aiohttp/blob/master/LICENSE.txt
+
+[45]: https://github.com/Tinche/aiofiles
+[46]: https://github.com/Tinche
+[47]: https://github.com
+[48]: https://github.com/Tinche/aiofiles/blob/main/LICENSE
