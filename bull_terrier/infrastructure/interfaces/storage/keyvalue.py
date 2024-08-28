@@ -38,7 +38,7 @@ class KeyValueStorage(Protocol):
         """
 
     @abstractmethod
-    async def insert(self: Self, key: SupportsStr, value: SupportsStr) -> bool:
+    async def insert(self: Self, key: SupportsStr, value: SupportsStr) -> None:
         """
         Insert the value.
 
@@ -48,13 +48,6 @@ class KeyValueStorage(Protocol):
             Key.
         value : SupportsStr
             Value.
-
-        Returns
-        -------
-        True
-            Value was inserted.
-        False
-            Value was **NOT** inserted.
         """
 
     @abstractmethod

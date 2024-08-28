@@ -8,6 +8,7 @@ from tempfile import mkstemp
 from typing import TYPE_CHECKING
 
 import aiofiles
+import aiofiles.ospath
 
 from aiohttp import ClientSession
 
@@ -78,7 +79,11 @@ class DownloaderAdapter(Downloader):
         if path is None:
             return None
 
-        if not path.exists() or not path.is_file():
+        if not await aiofiles.ospath.exists(path):
+            await self._storage.delete(key=url)
+            return None
+
+        if not await aiofiles.ospath.isfile(path):
             await self._storage.delete(key=url)
             return None
 
