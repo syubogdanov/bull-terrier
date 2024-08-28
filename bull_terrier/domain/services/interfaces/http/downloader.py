@@ -15,12 +15,12 @@ if TYPE_CHECKING:
 
 
 class Downloader(Protocol):
-    """The downloader protocol."""
+    """The `HTTP` downloader protocol."""
 
     @abstractmethod
     async def download(self: Self, url: "HttpUrl") -> "FilePath":
         """
-        Download a file.
+        Download contents of the web page.
 
         Parameters
         ----------
