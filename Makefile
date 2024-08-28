@@ -8,3 +8,9 @@ mypy:
 
 ruff:
 	$(VENV) ruff check --no-cache .
+
+# Tests
+test: docstring-tests
+
+docstring-tests:
+	$(VENV) python -B -m tests.docstring
