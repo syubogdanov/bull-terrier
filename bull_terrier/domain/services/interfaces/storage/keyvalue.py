@@ -16,8 +16,8 @@ if TYPE_CHECKING:
     from bull_terrier.utils.typing import SupportsStr
 
 
-class KeyValueNoSQL(Protocol):
-    """The key-value database protocol."""
+class KeyValueStorage(Protocol):
+    """The key-value storage protocol."""
 
     @overload
     async def get(self: Self, key: SupportsStr) -> str | None: ...

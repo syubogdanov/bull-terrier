@@ -30,14 +30,14 @@ else:
 if TYPE_CHECKING:
     from pydantic import FilePath, HttpUrl
 
-    from bull_terrier.domain.services.interfaces.storage.nosql.keyvalue import KeyValueNoSQL
+    from bull_terrier.domain.services.interfaces.storage.keyvalue import KeyValueStorage
 
 
 @dataclass
 class DownloaderAdapter(Downloader):
     """The `HTTP` downloader adapter."""
 
-    _storage: KeyValueNoSQL
+    _storage: KeyValueStorage
 
     async def download(self: Self, url: HttpUrl) -> FilePath:
         """
