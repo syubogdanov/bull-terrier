@@ -3,7 +3,7 @@ from __future__ import annotations
 import sys
 
 from abc import abstractmethod
-from typing import TYPE_CHECKING, Protocol, overload
+from typing import TYPE_CHECKING, Protocol
 
 
 if sys.version_info >= (3, 11):
@@ -19,38 +19,26 @@ if TYPE_CHECKING:
 class KeyValueStorage(Protocol):
     """The key-value storage protocol."""
 
-    @overload
-    async def get(self: Self, key: SupportsStr) -> str | None: ...
-
-    @overload
-    async def get(self: Self, key: SupportsStr, default: str) -> str: ...
-
     @abstractmethod
-    async def get(self: Self, key: SupportsStr, default: str | None = None) -> str | None:
+    async def get(self: Self, key: SupportsStr) -> str | None:
         """
-        Return the value for key if key is in the storage, else default.
+        Return the value for key if key is in the storage.
 
         Parameters
         ----------
         key : SupportsStr
             Key.
-        default : str | None
-            Default value.
 
         Returns
         -------
         str
-            Value (or default).
+            Value for key.
         None
             Key is not present.
-
-        Notes
-        -----
-        * Default values are not inserted.
         """
 
     @abstractmethod
-    async def insert(self: Self, key: SupportsStr, value: str) -> bool:
+    async def insert(self: Self, key: SupportsStr, value: SupportsStr) -> bool:
         """
         Insert the value.
 
@@ -58,7 +46,7 @@ class KeyValueStorage(Protocol):
         ----------
         key : SupportsStr
             Key.
-        value : str
+        value : SupportsStr
             Value.
 
         Returns
