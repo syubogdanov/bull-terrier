@@ -30,7 +30,7 @@ else:
 if TYPE_CHECKING:
     from pydantic import FilePath, HttpUrl
 
-    from bull_terrier.domain.services.interfaces.storage.keyvalue import KeyValueStorage
+    from bull_terrier.infrastructure.interfaces.storage.keyvalue import KeyValueStorage
 
 
 @dataclass
