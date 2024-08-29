@@ -22,7 +22,7 @@ if TYPE_CHECKING:
     from bull_terrier.domain.entities.web.com.gitlab.username import Username
 
 
-class GitHub(Protocol):
+class GitLab(Protocol):
     """The `GitLab` protocol."""
 
     @overload

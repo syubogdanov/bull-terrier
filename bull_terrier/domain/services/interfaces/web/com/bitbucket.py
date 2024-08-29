@@ -22,8 +22,8 @@ if TYPE_CHECKING:
     from bull_terrier.domain.entities.web.com.bitbucket.workspace import Workspace
 
 
-class GitHub(Protocol):
-    """The `GitHub` protocol."""
+class Bitbucket(Protocol):
+    """The `Bitbucket` protocol."""
 
     @overload
     async def download(
