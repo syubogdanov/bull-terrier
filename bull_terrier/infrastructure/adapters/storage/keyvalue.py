@@ -80,9 +80,9 @@ class KeyValueStorageAdapter(KeyValueStorage):
 
             return cell.value
 
-    async def insert(self: Self, key: SupportsStr, value: SupportsStr) -> None:
+    async def update(self: Self, key: SupportsStr, value: SupportsStr) -> None:
         """
-        Insert the value.
+        Update the storage with the key/value pair.
 
         Parameters
         ----------
@@ -113,7 +113,7 @@ class KeyValueStorageAdapter(KeyValueStorage):
         path = self._to_path(as_str)
 
         async with LockSingletonFactory.new(key=as_str):
-            with suppress(FileNotFoundError):
+            with suppress(FileNotFoundError, OSError, PermissionError):
                 await aiofiles.os.remove(path)
 
     @staticmethod

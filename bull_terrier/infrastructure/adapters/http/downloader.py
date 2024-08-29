@@ -68,7 +68,7 @@ class DownloaderAdapter(Downloader):
                     async for chunk, _ in response.content.iter_chunks():
                         await file.write(chunk)
 
-                await self._storage.insert(key=url, value=path)
+                await self._storage.update(key=url, value=path)
 
                 return Path(path)
 

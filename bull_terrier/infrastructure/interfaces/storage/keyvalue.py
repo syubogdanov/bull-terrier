@@ -38,9 +38,9 @@ class KeyValueStorage(Protocol):
         """
 
     @abstractmethod
-    async def insert(self: Self, key: SupportsStr, value: SupportsStr) -> None:
+    async def update(self: Self, key: SupportsStr, value: SupportsStr) -> None:
         """
-        Insert the value.
+        Update the storage with the key/value pair.
 
         Parameters
         ----------
