@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import sys
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from tempfile import mkstemp
 from typing import TYPE_CHECKING
@@ -40,6 +40,8 @@ class DownloaderAdapter(Downloader):
 
     _cache: CacheStorage
 
+    _lock_singleton_factory: LockSingletonFactory = field(default_factory=LockSingletonFactory)
+
     async def download(self: Self, url: HttpUrl) -> FilePath:
         """
         Download contents of the web page.
@@ -54,7 +56,7 @@ class DownloaderAdapter(Downloader):
         FilePath
             File with the contents of the web-page.
         """
-        async with LockSingletonFactory.new(key=self._get_lock_key(url)):
+        async with self._lock_singleton_factory.new(key=url):
             if (cached_file := await self._get_cached_file(url)):
                 return cached_file
 
@@ -89,7 +91,3 @@ class DownloaderAdapter(Downloader):
             return None
 
         return path
-
-    @staticmethod
-    def _get_lock_key(url: HttpUrl) -> str:
-        return f"bull_terrier.infrastructure.adapters.http.downloader@{url}"

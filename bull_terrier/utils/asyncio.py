@@ -1,12 +1,10 @@
-from __future__ import annotations
-
 import sys
 
 from asyncio import Lock, get_running_loop
 from contextvars import copy_context
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from functools import partial
-from typing import TYPE_CHECKING, Any, ClassVar
+from typing import TYPE_CHECKING, Any
 from weakref import WeakValueDictionary
 
 
@@ -31,29 +29,30 @@ class LockSingletonFactory:
 
     Examples
     --------
-    >>> lhs = LockSingletonFactory.new(key="python")
-    >>> rhs = LockSingletonFactory.new(key="python")
+    >>> factory = LockSingletonFactory()
+    >>> lhs = factory.new(key="python")
+    >>> rhs = factory.new(key="python")
     >>> id(lhs) == id(rhs)
     True
 
-    >>> lhs = LockSingletonFactory.new(key="hello")
-    >>> rhs = LockSingletonFactory.new(key="world")
+    >>> factory = LockSingletonFactory()
+    >>> lhs = factory.new(key="hello")
+    >>> rhs = factory.new(key="world")
     >>> id(lhs) == id(rhs)
     False
     """
 
-    _locks: ClassVar = WeakValueDictionary()
+    _locks: WeakValueDictionary["Hashable", Lock] = field(default_factory=WeakValueDictionary)
 
-    @classmethod
-    def new(cls: type[Self], *, key: Hashable | None = None) -> Lock:
-        """Create an `asyncio.Lock` object."""
-        if key not in cls._locks:
+    def new(self: Self, *, key: "Hashable" = None) -> Lock:
+        """Create an `asyncio.Lock` singleton."""
+        if key not in self._locks:
             lock = Lock()
-            cls._locks[key] = lock
-        return cls._locks[key]
+            self._locks[key] = lock
+        return self._locks[key]
 
 
-async def to_thread(func: Callable[..., Any], /, *args: Any, **kwargs: Any) -> Any:  # noqa: ANN401
+async def to_thread(func: "Callable[..., Any]", /, *args: Any, **kwargs: Any) -> Any:  # noqa: ANN401
     """Asynchronously run function `func` in a separate thread.
 
     Parameters

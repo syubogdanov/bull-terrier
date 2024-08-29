@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 
 
 class CacheStorage(Protocol):
-    """The key-value storage protocol."""
+    """The cache storage protocol."""
 
     @abstractmethod
     async def get(self: Self, key: SupportsStr) -> str | None:
