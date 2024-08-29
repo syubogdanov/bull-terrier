@@ -14,7 +14,7 @@ import aiofiles.ospath
 
 from pydantic import ValidationError
 
-from bull_terrier.infrastructure.interfaces.storage.keyvalue import KeyValueStorage
+from bull_terrier.domain.services.interfaces.storage.keyvalue import KeyValueStorage
 from bull_terrier.infrastructure.schemas.storage.keyvalue import CellSchema
 from bull_terrier.utils.asyncio import LockSingletonFactory
 from bull_terrier.utils.datetime import utcnow
