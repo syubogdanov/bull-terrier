@@ -31,14 +31,14 @@ else:
 if TYPE_CHECKING:
     from pydantic import FilePath, HttpUrl
 
-    from bull_terrier.domain.services.interfaces.storage.keyvalue import KeyValueStorage
+    from bull_terrier.domain.services.interfaces.storage.cache import CacheStorage
 
 
 @dataclass
 class DownloaderAdapter(Downloader):
     """The `HTTP` downloader adapter."""
 
-    _storage: KeyValueStorage
+    _cache: CacheStorage
 
     async def download(self: Self, url: HttpUrl) -> FilePath:
         """
@@ -54,8 +54,8 @@ class DownloaderAdapter(Downloader):
         FilePath
             File with the contents of the web-page.
         """
-        async with LockSingletonFactory.new(key=url):
-            if (cached_file := await self._get_cached_file(url)) is not None:
+        async with LockSingletonFactory.new(key=self._get_lock_key(url)):
+            if (cached_file := await self._get_cached_file(url)):
                 return cached_file
 
             async with ClientSession() as session, session.get(str(url)) as response:
@@ -68,23 +68,27 @@ class DownloaderAdapter(Downloader):
                     async for chunk, _ in response.content.iter_chunks():
                         await file.write(chunk)
 
-                await self._storage.update(key=url, value=path)
+                await self._cache.update(key=url, value=path)
 
                 return Path(path)
 
     async def _get_cached_file(self: Self, url: HttpUrl) -> FilePath | None:
-        value = await self._storage.get(key=url)
+        """Get the cached file, if it exists."""
+        value = await self._cache.get(key=url)
         path = Path(value) if value else None
 
         if path is None:
             return None
 
         if not await aiofiles.ospath.exists(path):
-            await self._storage.delete(key=url)
+            await self._cache.delete(key=url)
             return None
 
         if not await aiofiles.ospath.isfile(path):
-            await self._storage.delete(key=url)
+            await self._cache.delete(key=url)
             return None
 
         return path
+
+    async def _get_lock_key(self: Self, url: HttpUrl) -> str:
+        return f"bull_terrier.infrastructure.adapters.http.downloader@{url}"
