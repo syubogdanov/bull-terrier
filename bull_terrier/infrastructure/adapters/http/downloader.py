@@ -90,5 +90,6 @@ class DownloaderAdapter(Downloader):
 
         return path
 
-    async def _get_lock_key(self: Self, url: HttpUrl) -> str:
+    @staticmethod
+    def _get_lock_key(url: HttpUrl) -> str:
         return f"bull_terrier.infrastructure.adapters.http.downloader@{url}"
