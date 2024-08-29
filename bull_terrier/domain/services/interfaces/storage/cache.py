@@ -16,13 +16,13 @@ if TYPE_CHECKING:
     from bull_terrier.utils.typing import SupportsStr
 
 
-class KeyValueStorage(Protocol):
+class CacheStorage(Protocol):
     """The key-value storage protocol."""
 
     @abstractmethod
     async def get(self: Self, key: SupportsStr) -> str | None:
         """
-        Return the value for key if key is in the storage.
+        Return the value for key if key is in the cache storage.
 
         Parameters
         ----------
@@ -40,7 +40,7 @@ class KeyValueStorage(Protocol):
     @abstractmethod
     async def update(self: Self, key: SupportsStr, value: SupportsStr) -> None:
         """
-        Update the storage with the key/value pair.
+        Update the cache storage with the key/value pair.
 
         Parameters
         ----------
@@ -53,7 +53,7 @@ class KeyValueStorage(Protocol):
     @abstractmethod
     async def delete(self: Self, key: SupportsStr) -> None:
         """
-        Delete the key.
+        Delete the key from the cache storage.
 
         Parameters
         ----------
