@@ -20,32 +20,32 @@ if TYPE_CHECKING:
 
 @dataclass
 class LockSingletonFactory:
-    """A singleton version of `asyncio.Lock`.
-
-    Notes
-    -----
-    * By specifying the key, you get a new singletone.
-    * By default, the key is `None`.
-
-    Examples
-    --------
-    >>> factory = LockSingletonFactory()
-    >>> lhs = factory.new(key="python")
-    >>> rhs = factory.new(key="python")
-    >>> id(lhs) == id(rhs)
-    True
-
-    >>> factory = LockSingletonFactory()
-    >>> lhs = factory.new(key="hello")
-    >>> rhs = factory.new(key="world")
-    >>> id(lhs) == id(rhs)
-    False
-    """
+    """An `asyncio.Lock` singleton factory."""
 
     _locks: WeakValueDictionary["Hashable", Lock] = field(default_factory=WeakValueDictionary)
 
     def new(self: Self, *, key: "Hashable" = None) -> Lock:
-        """Create an `asyncio.Lock` singleton."""
+        """Create an `asyncio.Lock` singleton.
+
+        Notes
+        -----
+        * By specifying the key, you get a new singleton.
+        * By default, the key is `None`.
+
+        Examples
+        --------
+        >>> factory = LockSingletonFactory()
+        >>> lhs = factory.new(key="python")
+        >>> rhs = factory.new(key="python")
+        >>> id(lhs) == id(rhs)
+        True
+
+        >>> factory = LockSingletonFactory()
+        >>> lhs = factory.new(key="hello")
+        >>> rhs = factory.new(key="world")
+        >>> id(lhs) == id(rhs)
+        False
+        """
         if key not in self._locks:
             lock = Lock()
             self._locks[key] = lock
