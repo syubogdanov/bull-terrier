@@ -31,6 +31,7 @@ classifiers = [
 [tool.poetry.dependencies]
 aiofiles = "~24.1"
 aiohttp = "~3.10"
+aioshutil = "~1.5"
 eth-pydantic-types = "~0.1.0"
 pydantic = "~2.7"
 python = ">=3.8, <3.13"
