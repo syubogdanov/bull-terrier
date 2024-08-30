@@ -25,7 +25,7 @@ def main() -> None:
 
     failed_tests: int = 0
 
-    for path in root.rglob("*.py"):
+    for path in root.glob("bull_terrier/**/*.py"):
         relpath = path.relative_to(root)
 
         module_name = get_module_name(relpath)
