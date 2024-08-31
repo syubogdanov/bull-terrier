@@ -15,6 +15,7 @@
 | [aiohttp][41]            | [@aio-libs][42]                      | [GitHub][43]               | [Apache-2.0][44]                 |
 | [aiofiles][45]           | [@Tinche][46]                        | [GitHub][47]               | [Apache-2.0][48]                 |
 | [aioshutil][49]          | [@kumaraditya303][50]                | [GitHub][51]               | [BSD-3-Clause][52]               |
+| [tenacity][53]           | [@jd][54]                            | [GitHub][55]               | [Apache-2.0][56]                 |
 
 [01]: https://www.flaticon.com/free-icon/bull-terrier_3002881
 [02]: https://www.flaticon.com/authors/freepik
@@ -80,3 +81,8 @@
 [50]: https://github.com/kumaraditya303
 [51]: https://github.com
 [52]: https://github.com/kumaraditya303/aioshutil/blob/master/LICENSE.md
+
+[53]: https://github.com/jd/tenacity
+[54]: https://github.com/jd
+[55]: https://github.com
+[56]: https://github.com/jd/tenacity/blob/main/LICENSE

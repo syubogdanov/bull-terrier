@@ -35,6 +35,7 @@ aioshutil = "~1.5"
 eth-pydantic-types = "~0.1.0"
 pydantic = "~2.7"
 python = ">=3.8, <3.13"
+tenacity = "~9.0"
 typing-extensions = { version = "~4.12", python = "<3.9" }
 
 [tool.poetry.group.dev]

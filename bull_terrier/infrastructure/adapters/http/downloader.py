@@ -14,6 +14,7 @@ import aiofiles.ospath
 
 from aiohttp import ClientSession
 from aiohttp.client_exceptions import ClientConnectionError, ClientResponseError
+from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_exponential
 
 from bull_terrier.domain.services.interfaces.http.downloader import Downloader
 from bull_terrier.utils.asyncio import LockSingletonFactory
@@ -45,6 +46,12 @@ class DownloaderAdapter(Downloader):
 
     _lock_singleton_factory: LockSingletonFactory = field(default_factory=LockSingletonFactory)
 
+    @retry(
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(),
+        retry=retry_if_exception_type(ConnectionError),
+        reraise=True,
+    )
     async def download(self: Self, url: HttpUrl) -> FilePath:
         """
         Download contents of the web page.
