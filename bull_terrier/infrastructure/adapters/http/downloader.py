@@ -38,7 +38,7 @@ if TYPE_CHECKING:
 class DownloaderAdapter(Downloader):
     """The `HTTP` downloader adapter."""
 
-    _cache: CacheStorage
+    _cache_storage: CacheStorage
 
     _lock_singleton_factory: LockSingletonFactory = field(default_factory=LockSingletonFactory)
 
@@ -57,7 +57,7 @@ class DownloaderAdapter(Downloader):
             File with the contents of the web-page.
         """
         async with self._lock_singleton_factory.new(key=url):
-            if (cached_file := await self._get_cached_file(url)):
+            if (cached_file := await self._get_from_cache(url)):
                 return cached_file
 
             async with ClientSession() as session, session.get(str(url)) as response:
@@ -70,24 +70,24 @@ class DownloaderAdapter(Downloader):
                     async for chunk, _ in response.content.iter_chunks():
                         await file.write(chunk)
 
-                await self._cache.update(key=url, value=path)
+                await self._cache_storage.update(key=url, value=path)
 
                 return Path(path)
 
-    async def _get_cached_file(self: Self, url: HttpUrl) -> FilePath | None:
+    async def _get_from_cache(self: Self, url: HttpUrl) -> FilePath | None:
         """Get the cached file, if it exists."""
-        value = await self._cache.get(key=url)
+        value = await self._cache_storage.get(key=url)
         path = Path(value) if value else None
 
         if path is None:
             return None
 
         if not await aiofiles.ospath.exists(path):
-            await self._cache.delete(key=url)
+            await self._cache_storage.delete(key=url)
             return None
 
         if not await aiofiles.ospath.isfile(path):
-            await self._cache.delete(key=url)
+            await self._cache_storage.delete(key=url)
             return None
 
         return path
