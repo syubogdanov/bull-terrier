@@ -3,14 +3,17 @@ from __future__ import annotations
 import sys
 
 from dataclasses import dataclass, field
+from http.client import HTTPMessage
 from pathlib import Path
 from tempfile import mkstemp
 from typing import TYPE_CHECKING
+from urllib.error import HTTPError
 
 import aiofiles
 import aiofiles.ospath
 
 from aiohttp import ClientSession
+from aiohttp.client_exceptions import ClientConnectionError, ClientResponseError
 
 from bull_terrier.domain.services.interfaces.http.downloader import Downloader
 from bull_terrier.utils.asyncio import LockSingletonFactory
@@ -57,22 +60,35 @@ class DownloaderAdapter(Downloader):
             File with the contents of the web-page.
         """
         async with self._lock_singleton_factory.new(key=url):
-            if (cached_file := await self._get_from_cache(url)):
+            if cached_file := await self._get_from_cache(url):
                 return cached_file
 
-            async with ClientSession() as session, session.get(str(url)) as response:
-                response.raise_for_status()
+            async with ClientSession() as session:
+                try:
+                    async with session.get(str(url), raise_for_status=True) as response:
+                        # `tempfile.mkstemp` is a blocking IO operation
+                        file_descriptor, path = await to_thread(mkstemp)
 
-                # `tempfile.mkstemp` is a blocking IO operation
-                file_descriptor, path = await to_thread(mkstemp)
+                        async with aiofiles.open(file_descriptor, mode="wb") as file:
+                            async for chunk, _ in response.content.iter_chunks():
+                                await file.write(chunk)
 
-                async with aiofiles.open(file_descriptor, mode="wb") as file:
-                    async for chunk, _ in response.content.iter_chunks():
-                        await file.write(chunk)
+                except ClientConnectionError as exception:
+                    detail = str(exception)
+                    raise ConnectionError(detail) from exception
 
-                await self._cache_storage.update(key=url, value=path)
+                except ClientResponseError as exception:
+                    raise HTTPError(
+                        url=url.unicode_string(),
+                        code=exception.status,
+                        msg=exception.message,
+                        hdrs=HTTPMessage(),
+                        fp=None,
+                    ) from exception
 
-                return Path(path)
+            await self._cache_storage.update(key=url, value=path)
+
+            return Path(path)
 
     async def _get_from_cache(self: Self, url: HttpUrl) -> FilePath | None:
         """Get the cached file, if it exists."""

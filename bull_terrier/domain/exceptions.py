@@ -2,10 +2,6 @@ class BullTerrierError(Exception):
     """The base class for all `Bull-Terrier` exceptions."""
 
 
-class HTTPError(BullTerrierError):
-    """The base class for all `HTTP` exceptions."""
-
-
 class BitbucketError(BullTerrierError):
     """The base class for all `Bitbucket` exceptions."""
 
