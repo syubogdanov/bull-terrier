@@ -1,10 +1,8 @@
 import sys
 
-from asyncio import Lock, get_running_loop
-from contextvars import copy_context
+from asyncio import Lock
 from dataclasses import dataclass, field
-from functools import partial
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 from weakref import WeakValueDictionary
 
 
@@ -52,33 +50,42 @@ class LockSingletonFactory:
         return self._locks[key]
 
 
-async def to_thread(func: "Callable[..., Any]", /, *args: Any, **kwargs: Any) -> Any:  # noqa: ANN401
-    """Asynchronously run function `func` in a separate thread.
+if not (sys.version_info >= (3, 9)):
+    """The backwards compatibility block."""
 
-    Parameters
-    ----------
-    func : Callable[..., Any]
-        Function.
-    *args : Any
-        Positional arguments to `func`.
-    *kwargs : Any
-        Keyword arguments to `func`.
+    from asyncio import get_running_loop
+    from contextvars import copy_context
+    from functools import partial
+    from typing import Any
 
-    Returns
-    -------
-    Any
-        Eventual result of `func`.
 
-    Notes
-    -----
-    * Used to ensure compatibility with `Python` below `3.9`;
-    * This is literally a complete copy of `asyncio.to_thread`.
+    async def to_thread(func: "Callable[..., Any]", /, *args: Any, **kwargs: Any) -> Any:  # noqa: ANN401
+        """Asynchronously run function `func` in a separate thread.
 
-    See Also
-    --------
-    * `asyncio.to_thread`.
-    """
-    loop = get_running_loop()
-    ctx = copy_context()
-    func_call = partial(ctx.run, func, *args, **kwargs)
-    return await loop.run_in_executor(None, func_call)
+        Parameters
+        ----------
+        func : Callable[..., Any]
+            Function.
+        *args : Any
+            Positional arguments to `func`.
+        *kwargs : Any
+            Keyword arguments to `func`.
+
+        Returns
+        -------
+        Any
+            Eventual result of `func`.
+
+        Notes
+        -----
+        * Used to ensure compatibility with `Python` below `3.9`;
+        * This is literally a complete copy of `asyncio.to_thread`.
+
+        See Also
+        --------
+        * `asyncio.to_thread`.
+        """
+        loop = get_running_loop()
+        ctx = copy_context()
+        func_call = partial(ctx.run, func, *args, **kwargs)
+        return await loop.run_in_executor(None, func_call)
