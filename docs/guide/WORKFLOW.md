@@ -92,7 +92,8 @@ jobs:
 ### Advanced Example
 
 The following example demonstrates how to define the *workflow* document so that Bull-Terrier
-performs two independent checks - separately `DC` and separately `Marvel`.
+performs two independent checks - separately `DC` and separately `Marvel`. Within each job, pairwise
+comparisons will be carried out.
 
 ```yaml
 ---
@@ -124,8 +125,6 @@ jobs:
         - name: Green Goblin
           path: ~/films/../games/lego
 ```
-
-...
 
 ## Attributes
 
