@@ -14,23 +14,23 @@
   * [2.4. GitLab](#gitlab)
   * [2.5. HTTP](#http)
 
-* **[2. Examples](#examples)**
-  * [2.1. Simple Example](#simple-example)
-  * [2.2. Adavanced Example](#advanced-example)
+* **[3. Examples](#examples)**
+  * [3.1. Simple Example](#simple-example)
+  * [3.2. Adavanced Example](#advanced-example)
 
-* **[3. Attributes](#attributes)**
-  * [3.1. branch](#branch)
-  * [3.2. commit](#commit)
-  * [3.3. host](#host)
-  * [3.4. jobs](#jobs)
-  * [3.5. mime](#mime)
-  * [3.6. name](#name)
-  * [3.7. path](#path)
-  * [3.8. repo](#repo)
-  * [3.9. tag](#tag)
-  * [3.10. tasks](#tasks)
-  * [3.11. url](#url)
-  * [3.12. user](#user)
+* **[4. Attributes](#attributes)**
+  * [4.1. branch](#branch)
+  * [4.2. commit](#commit)
+  * [4.3. host](#host)
+  * [4.4. jobs](#jobs)
+  * [4.5. mime](#mime)
+  * [4.6. name](#name)
+  * [4.7. path](#path)
+  * [4.8. repo](#repo)
+  * [4.9. tag](#tag)
+  * [4.10. tasks](#tasks)
+  * [4.11. url](#url)
+  * [4.12. user](#user)
 
 ## Definitions
 
