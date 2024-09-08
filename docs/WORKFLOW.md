@@ -114,6 +114,8 @@ jobs:
 
 To use a repository hosted on [Bitbucket](https://bitbucket.org/), use the following rule.
 
+...
+
 Structure:
 
 * [`name`](#name) : *string* : *required*;
@@ -145,10 +147,12 @@ jobs:
 
 To use a regular file or a directory, use the following rule.
 
+...
+
 Structure:
 
 * [`name`](#name) : *string* : *required*;
-* [`path`](#path) : *string* : *required*.
+* [`path`](#path) : [*path*](DTYPES.md#path) : *required*.
 
 ```yaml
 ---
@@ -184,6 +188,8 @@ jobs:
 
 To use a repository hosted on [GitHub](https://github.com/), use the following rule.
 
+...
+
 Structure:
 
 * [`name`](#name) : *string* : *required*;
@@ -215,6 +221,8 @@ jobs:
 
 To use a repository hosted on [GitLab](https://gitlab.com/), use the following rule.
 
+...
+
 Structure:
 
 * [`name`](#name) : *string* : *required*;
@@ -245,6 +253,8 @@ jobs:
 ### HTTP
 
 To use a web resource that is accessible over `HTTP` or `HTTPS`, use the following rule.
+
+...
 
 Structure:
 
