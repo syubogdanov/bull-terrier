@@ -118,6 +118,8 @@ To use a repository hosted on [Bitbucket](https://bitbucket.org/), use the follo
 
 ### File System
 
+To use a regular file or a directory, use the following rule.
+
 ...
 
 ### GitHub
@@ -133,6 +135,8 @@ To use a repository hosted on [GitLab](https://gitlab.com/), use the following r
 ...
 
 ### HTTP
+
+To use a web resource that is accessible over `HTTP` or `HTTPS`, use the following rule.
 
 ...
 
