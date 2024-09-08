@@ -285,7 +285,8 @@ jobs:
 ### Simple Example
 
 The following example demonstrates how to define the *workflow* document so that Bull-Terrier
-compares the contents of the `/home/linux/` directory with the contents of the `cpython` repository.
+compares the contents of the `/home/linux/` directory with the contents of the
+[`cpython`](https://github.com/python/cpython) repository.
 
 ```yaml
 ---
