@@ -145,7 +145,40 @@ jobs:
 
 To use a regular file or a directory, use the following rule.
 
-...
+Structure:
+
+* [`name`](#name) : *string* : *required*;
+* [`path`](#path) : *string* : *required*.
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        # -> -> -> -> -> -> -> ->
+        - name: Taylor Swift
+          path: C:/Users/TS/Midnights/Anti-Hero.txt
+        # -> -> -> -> -> -> -> ->
+
+        - ...
+```
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        # -> -> -> -> -> -> -> ->
+        - name: Lana Del Rey
+          path: ~/Desktop/Honeymoon/
+        # -> -> -> -> -> -> -> ->
+
+        - ...
+```
 
 ### GitHub
 
@@ -213,7 +246,27 @@ jobs:
 
 To use a web resource that is accessible over `HTTP` or `HTTPS`, use the following rule.
 
-...
+Structure:
+
+* [`name`](#name) : *string* : *required*;
+* [`url`](#url) : *string* : *required*;
+* [`mime`](#mime) : *literal-string* : *optional*.
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        # -> -> -> -> -> -> -> ->
+        - name: Wovlerine
+          url: https://x-men.marvel/logan.rar
+          mime: application/x-rar-compressed
+        # -> -> -> -> -> -> -> ->
+
+        - ...
+```
 
 ## Examples
 
