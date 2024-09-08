@@ -245,7 +245,11 @@ jobs:
 
 ### branch
 
-`branch` specifies the *git* branch to be used.
+`branch` : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*
+
+Specifies the [branch](https://git-scm.com/docs/git-branch) to be used. If no *refname* is specified
+([branch](#branch), [commit](#commit) or [tag](#tag)), the default repository's branch will be used
+automatically.
 
 ```yaml
 ---
@@ -267,7 +271,9 @@ jobs:
 
 ### commit
 
-`commit` specifies the *git* commit to be used.
+`commit` : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*
+
+Specifies the [commit](https://git-scm.com/docs/git-commit) to be used.
 
 ```yaml
 ---
@@ -309,11 +315,50 @@ jobs:
 
 ### repo
 
-...
+`repo` : *string* : *required*
+
+Specifies the repository ([Bitbucket](https://bitbucket.org/), [GitHub](https://github.com/)) or
+project ([GitLab](https://gitlab.com/)).
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: Bill Gates
+          host: GitHub
+          user: microsoft
+          # -> -> -> -> -> -> -> ->
+          repo: vscode
+          # -> -> -> -> -> -> -> ->
+
+        - ...
+```
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: Bugs Bunny
+          host: GitLab
+          user: looney-tunes
+          # -> -> -> -> -> -> -> ->
+          repo: merrie-melodies
+          # -> -> -> -> -> -> -> ->
+
+        - ...
+```
 
 ### tag
 
-`tag` specifies the *git* tag to be used.
+`tag` : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*
+
+Specifies the [tag](https://git-scm.com/docs/git-tag) to be used.
 
 ```yaml
 ---
@@ -343,4 +388,41 @@ jobs:
 
 ### user
 
-...
+`user` : *string* : *required*
+
+Specifies the username ([GitLab](https://gitlab.com/), [GitHub](https://github.com/)) or
+workspace ([Bitbucket](https://bitbucket.org/)).
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: Darth Vader
+          host: GitHub
+          # -> -> -> -> -> -> -> ->
+          user: anakin-skywalker
+          # -> -> -> -> -> -> -> ->
+          repo: sith
+
+        - ...
+```
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: Indiana Jones
+          host: Bitbucket
+          # -> -> -> -> -> -> -> ->
+          user: henry-jones
+          # -> -> -> -> -> -> -> ->
+          repo: crystal-skull
+
+        - ...
+```
