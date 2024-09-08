@@ -114,7 +114,32 @@ jobs:
 
 To use a repository hosted on [Bitbucket](https://bitbucket.org/), use the following rule.
 
-...
+Structure:
+
+* [`name`](#name) : *string* : *required*;
+* [`host`](#host) : *literal-string {`Bitbucket`}* : *required*;
+* [`user`](#user) : *string* : *required*;
+* [`repo`](#repo) : *string* : *required*;
+* [`branch`](#branch) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*;
+* [`commit`](#commit) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*;
+* [`tag`](#tag) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*.
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        # -> -> -> -> -> -> -> ->
+        - name: Kirk Hammett
+          host: Bitbucket
+          user: metallica
+          repo: master-of-puppets
+        # -> -> -> -> -> -> -> ->
+
+        - ...
+```
 
 ### File System
 
@@ -126,13 +151,63 @@ To use a regular file or a directory, use the following rule.
 
 To use a repository hosted on [GitHub](https://github.com/), use the following rule.
 
-...
+Structure:
+
+* [`name`](#name) : *string* : *required*;
+* [`host`](#host) : *literal-string {`GitHub`}* : *required*;
+* [`user`](#user) : *string* : *required*;
+* [`repo`](#repo) : *string* : *required*;
+* [`branch`](#branch) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*;
+* [`commit`](#commit) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*;
+* [`tag`](#tag) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*.
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        # -> -> -> -> -> -> -> ->
+        - name: Eminem
+          host: GitHub
+          user: shady-records
+          repo: slim-shady
+        # -> -> -> -> -> -> -> ->
+
+        - ...
+```
 
 ### GitLab
 
 To use a repository hosted on [GitLab](https://gitlab.com/), use the following rule.
 
-...
+Structure:
+
+* [`name`](#name) : *string* : *required*;
+* [`host`](#host) : *literal-string {`GitLab`}* : *required*;
+* [`user`](#user) : *string* : *required*;
+* [`repo`](#repo) : *string* : *required*;
+* [`branch`](#branch) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*;
+* [`commit`](#commit) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*;
+* [`tag`](#tag) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*.
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        # -> -> -> -> -> -> -> ->
+        - name: Donatello
+          host: GitLab
+          user: ninja-turtles
+          repo: purple
+        # -> -> -> -> -> -> -> ->
+
+        - ...
+```
 
 ### HTTP
 
@@ -245,8 +320,6 @@ jobs:
 
 ### branch
 
-`branch` : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*
-
 Specifies the [branch](https://git-scm.com/docs/git-branch) to be used. If no *refname* is specified
 ([branch](#branch), [commit](#commit) or [tag](#tag)), the default repository's branch will be used
 automatically.
@@ -270,8 +343,6 @@ jobs:
 ```
 
 ### commit
-
-`commit` : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*
 
 Specifies the [commit](https://git-scm.com/docs/git-commit) to be used.
 
@@ -315,8 +386,6 @@ jobs:
 
 ### repo
 
-`repo` : *string* : *required*
-
 Specifies the repository ([Bitbucket](https://bitbucket.org/), [GitHub](https://github.com/)) or
 project ([GitLab](https://gitlab.com/)).
 
@@ -356,8 +425,6 @@ jobs:
 
 ### tag
 
-`tag` : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*
-
 Specifies the [tag](https://git-scm.com/docs/git-tag) to be used.
 
 ```yaml
@@ -387,8 +454,6 @@ jobs:
 ...
 
 ### user
-
-`user` : *string* : *required*
 
 Specifies the username ([GitLab](https://gitlab.com/), [GitHub](https://github.com/)) or
 workspace ([Bitbucket](https://bitbucket.org/)).
