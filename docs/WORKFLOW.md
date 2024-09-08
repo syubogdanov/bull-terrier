@@ -120,9 +120,9 @@ Structure:
 * [`host`](#host) : *literal-string {`Bitbucket`}* : *required*;
 * [`user`](#user) : *string* : *required*;
 * [`repo`](#repo) : *string* : *required*;
-* [`branch`](#branch) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*;
-* [`commit`](#commit) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*;
-* [`tag`](#tag) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*.
+* [`branch`](#branch) : [*refname*](DTYPES.md#refname) : *optional*;
+* [`commit`](#commit) : [*sha1*](DTYPES.md#sha1) : *optional*;
+* [`tag`](#tag) : [*refname*](DTYPES.md#refname) : *optional*.
 
 ```yaml
 ---
@@ -190,9 +190,9 @@ Structure:
 * [`host`](#host) : *literal-string {`GitHub`}* : *required*;
 * [`user`](#user) : *string* : *required*;
 * [`repo`](#repo) : *string* : *required*;
-* [`branch`](#branch) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*;
-* [`commit`](#commit) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*;
-* [`tag`](#tag) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*.
+* [`branch`](#branch) : [*refname*](DTYPES.md#refname) : *optional*;
+* [`commit`](#commit) : [*sha1*](DTYPES.md#sha1) : *optional*;
+* [`tag`](#tag) : [*refname*](DTYPES.md#refname) : *optional*.
 
 ```yaml
 ---
@@ -221,9 +221,9 @@ Structure:
 * [`host`](#host) : *literal-string {`GitLab`}* : *required*;
 * [`user`](#user) : *string* : *required*;
 * [`repo`](#repo) : *string* : *required*;
-* [`branch`](#branch) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*;
-* [`commit`](#commit) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*;
-* [`tag`](#tag) : [*refname*](https://git-scm.com/docs/git-check-ref-format) : *optional*.
+* [`branch`](#branch) : [*refname*](DTYPES.md#refname) : *optional*;
+* [`commit`](#commit) : [*sha1*](DTYPES.md#sha1) : *optional*;
+* [`tag`](#tag) : [*refname*](DTYPES.md#refname) : *optional*.
 
 ```yaml
 ---
@@ -249,8 +249,8 @@ To use a web resource that is accessible over `HTTP` or `HTTPS`, use the followi
 Structure:
 
 * [`name`](#name) : *string* : *required*;
-* [`url`](#url) : *string* : *required*;
-* [`mime`](#mime) : *literal-string* : *optional*.
+* [`url`](#url) : [*url*](DTYPES.md#url) : *required*;
+* [`mime`](#mime) : [*mime*](DTYPES.md#mime) : *optional*.
 
 ```yaml
 ---
@@ -373,9 +373,7 @@ jobs:
 
 ### branch
 
-Specifies the [branch](https://git-scm.com/docs/git-branch) to be used. If no *refname* is specified
-([branch](#branch), [commit](#commit) or [tag](#tag)), the default repository's branch will be used
-automatically.
+Specifies the [branch](https://git-scm.com/docs/git-branch) to be used.
 
 ```yaml
 ---
