@@ -16,8 +16,7 @@
 
 * **[3. Examples](#examples)**
   * [3.1. Simple Example](#simple-example)
-  * [3.2. Adavanced Example](#advanced-example)
-  * [3.3. Real-Life Example](#real-life-example)
+  * [3.2. Real-Life Example](#real-life-example)
 
 * **[4. Attributes](#attributes)**
   * [4.1. branch](#branch)
@@ -300,42 +299,6 @@ jobs:
           host: GitHub
           user: python
           repo: cpython
-```
-
-### Advanced Example
-
-The following example demonstrates how to define the *workflow* document so that Bull-Terrier
-performs two independent checks - separately `DC` and separately `Marvel`.
-
-```yaml
----
-jobs:
-    - name: DC
-      tasks:
-        - name: Batman
-          host: Bitbucket
-          user: bruce-wayne
-          repo: arkham
-          branch: dark-knight
-
-        - name: Joker
-          url: https://joker.dc/earth-23
-          mime: application/gzip
-
-        - name: Two-Face
-          host: GitLab
-          user: harvey-dent
-          repo: coin
-          tag: tail
-
-    - name: Marvel
-      tasks:
-        - name: Spider-Man
-          url: https://spider.man/no-way-home
-          mime: text/plain
-
-        - name: Green Goblin
-          path: ~/films/../games/lego
 ```
 
 ### Real-Life Example
