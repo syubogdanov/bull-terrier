@@ -245,11 +245,47 @@ jobs:
 
 ### branch
 
-...
+`branch` specifies the *git* branch to be used.
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: James Hetfield
+          host: GitHub
+          user: metallica
+          repo: enter-sandman
+          # -> -> -> -> -> -> -> ->
+          branch: remastered-2021
+          # -> -> -> -> -> -> -> ->
+
+        - ...
+```
 
 ### commit
 
-...
+`commit` specifies the *git* commit to be used.
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: Ryan Gosling
+          host: GitLab
+          user: ryan-gosling
+          repo: la-la-land
+          # -> -> -> -> -> -> -> ->
+          commit: dea4ea046a6778c845edc4b6a916bc9f7699b82c
+          # -> -> -> -> -> -> -> ->
+
+        - ...
+```
 
 ### host
 
@@ -277,7 +313,25 @@ jobs:
 
 ### tag
 
-...
+`tag` specifies the *git* tag to be used.
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: Albert Einstein
+          host: Bitbucket
+          user: genius
+          repo: physics
+          # -> -> -> -> -> -> -> ->
+          tag: theory-of-relativity
+          # -> -> -> -> -> -> -> ->
+
+        - ...
+```
 
 ### tasks
 
