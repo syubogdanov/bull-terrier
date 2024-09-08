@@ -112,6 +112,8 @@ jobs:
 
 ### Bitbucket
 
+To use a repository hosted on [Bitbucket](https://bitbucket.org/), use the following rule.
+
 ...
 
 ### File System
@@ -120,9 +122,13 @@ jobs:
 
 ### GitHub
 
+To use a repository hosted on [GitHub](https://github.com/), use the following rule.
+
 ...
 
 ### GitLab
+
+To use a repository hosted on [GitLab](https://gitlab.com/), use the following rule.
 
 ...
 
