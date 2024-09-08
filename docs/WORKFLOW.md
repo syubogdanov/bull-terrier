@@ -114,7 +114,8 @@ jobs:
 
 To use a repository hosted on [Bitbucket](https://bitbucket.org/), use the following rule.
 
-...
+If [branch](#branch), [commit](#commit) or [tag](#tag) is not specified, then the repository's
+default branch is used.
 
 Structure:
 
@@ -188,7 +189,8 @@ jobs:
 
 To use a repository hosted on [GitHub](https://github.com/), use the following rule.
 
-...
+If [branch](#branch), [commit](#commit) or [tag](#tag) is not specified, then the repository's
+default branch is used.
 
 Structure:
 
@@ -221,7 +223,8 @@ jobs:
 
 To use a repository hosted on [GitLab](https://gitlab.com/), use the following rule.
 
-...
+If [branch](#branch), [commit](#commit) or [tag](#tag) is not specified, then the project's
+default branch is used.
 
 Structure:
 
