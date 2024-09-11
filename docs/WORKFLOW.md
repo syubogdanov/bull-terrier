@@ -73,7 +73,8 @@ jobs:
 
 ### Job
 
-**Job** is a collection of *tasks*. All *tasks* within a *job* must have unique names.
+**Job** is a collection of uniquely named *tasks* that are compared in pairs for plagiarism.
+Therefore, if any *job* contains less than two *tasks*, it will be ignored.
 
 ```yaml
 ---
@@ -93,9 +94,7 @@ jobs:
 
 ### Workflow
 
-**Workflow** is a collection of independent *jobs*, within which a *pairwise comparison* of *tasks*
-must be performed. Therefore, if any *job* contains less than two *tasks*, it will be ignored. All
-*jobs* within a *workflow* must have unique names.
+**Workflow** is a collection of uniquely named *jobs*.
 
 ```yaml
 ---
