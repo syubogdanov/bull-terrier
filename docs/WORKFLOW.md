@@ -93,9 +93,8 @@ jobs:
 
 ### Workflow
 
-**Workflow** is a document that declares a list of independent *jobs*, within which a *pairwise
-comparison* of *tasks* must be performed. Therefore, if any *job* contains less than two *tasks*, it
-will be ignored.
+**Workflow** is a collection of independent *jobs*, within which a *pairwise comparison* of *tasks*
+must be performed. Therefore, if any *job* contains less than two *tasks*, it will be ignored.
 
 ```yaml
 # -> -> -> -> -> -> -> ->
