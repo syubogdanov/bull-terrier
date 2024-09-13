@@ -241,7 +241,8 @@ jobs:
 To use a web resource that is accessible over `HTTP` or `HTTPS`, use the following rule.
 
 If [`mime`](#mime) is not specified, then the downloaded file is interpreted first as an archive,
-and if it cannot be decompressed in any known way, then as text.
+and if it cannot be decompressed in any known way, then as text. It is strongly recommended to
+specify [`mime`](#mime).
 
 Structure:
 
