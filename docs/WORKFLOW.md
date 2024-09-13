@@ -56,21 +56,6 @@ jobs:
         - ...
 ```
 
-```yaml
----
-jobs:
-    - name: ...
-      tasks:
-        - ...
-
-        # -> -> -> -> -> -> -> ->
-        - name: Bryan Cranston
-          path: C:/Users/dev/breaking-bad/
-        # -> -> -> -> -> -> -> ->
-
-        - ...
-```
-
 ### Job
 
 **Job** is a collection of uniquely named *tasks* that are compared in pairs for plagiarism.
