@@ -97,7 +97,7 @@ jobs:
 
 To use a repository hosted on [Bitbucket](https://bitbucket.org/), use the following rule.
 
-If [branch](#branch), [commit](#commit) or [tag](#tag) is not specified, then the repository's
+If [`branch`](#branch), [`commit`](#commit) or [`tag`](#tag) is not specified, then the repository's
 default branch is used.
 
 Structure:
@@ -172,7 +172,7 @@ jobs:
 
 To use a repository hosted on [GitHub](https://github.com/), use the following rule.
 
-If [branch](#branch), [commit](#commit) or [tag](#tag) is not specified, then the repository's
+If [`branch`](#branch), [`commit`](#commit) or [`tag`](#tag) is not specified, then the repository's
 default branch is used.
 
 Structure:
@@ -206,7 +206,7 @@ jobs:
 
 To use a repository hosted on [GitLab](https://gitlab.com/), use the following rule.
 
-If [branch](#branch), [commit](#commit) or [tag](#tag) is not specified, then the project's
+If [`branch`](#branch), [`commit`](#commit) or [`tag`](#tag) is not specified, then the project's
 default branch is used.
 
 Structure:
@@ -240,7 +240,8 @@ jobs:
 
 To use a web resource that is accessible over `HTTP` or `HTTPS`, use the following rule.
 
-...
+If [`mime`](#mime) is not specified, then the downloaded file is interpreted first as an archive,
+and if it cannot be decompressed in any known way, then as text.
 
 Structure:
 
