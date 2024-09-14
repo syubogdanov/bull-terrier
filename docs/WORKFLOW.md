@@ -314,23 +314,106 @@ jobs:
 
 ### host
 
-...
+Specifies the name of the source-code-hosting platform to be used.
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: Hugh Jackman
+          # -> -> -> -> -> -> -> ->
+          host: Bitbucket
+          # -> -> -> -> -> -> -> ->
+          user: marvel
+          repo: wolverine
+
+        - ...
+```
 
 ### jobs
 
-...
+Specifies the list of [*jobs*](#job).
+
+```yaml
+---
+# -> -> -> -> -> -> -> ->
+jobs:
+    - ...
+    - ...
+    - ...
+# -> -> -> -> -> -> -> ->
+```
 
 ### mime
 
-...
+Specifies the [MIME](https://en.wikipedia.org/wiki/MIME).
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: Laura Kinney
+          url: https://x-men.marvel/x-23.tar.gz
+          # -> -> -> -> -> -> -> ->
+          mime: application/x-tar
+          # -> -> -> -> -> -> -> ->
+
+        - ...
+```
 
 ### name
 
-...
+Specifies the name of a [job](#job) or a [task](#task).
+
+```yaml
+---
+jobs:
+      # -> -> -> -> -> -> -> ->
+    - name: F-R-I-E-N-D-S
+      # -> -> -> -> -> -> -> ->
+      tasks:
+        - ...
+```
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+          # -> -> -> -> -> -> -> ->
+        - name: Sheldon Lee Cooper
+          # -> -> -> -> -> -> -> ->
+          path: /home/big-bang-theory/
+
+        - ...
+```
 
 ### path
 
-...
+Specifies the path in the file system.
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: Wade Wilson
+          # -> -> -> -> -> -> -> ->
+          path: ~/hello/deadpool/
+          # -> -> -> -> -> -> -> ->
+
+        - ...
+```
 
 ### repo
 
@@ -395,11 +478,42 @@ jobs:
 
 ### tasks
 
-...
+Specifies the list of [*tasks*](#task).
+
+```yaml
+---
+jobs:
+    - ...
+
+    - name: How I Met Your Mother
+      # -> -> -> -> -> -> -> ->
+      tasks:
+      # -> -> -> -> -> -> -> ->
+        - ...
+        - ...
+        - ...
+
+    - ...
+```
 
 ### url
 
-...
+Specifies the URL to be used.
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: Andy Dufrain
+          # -> -> -> -> -> -> -> ->
+          url: https://shawshank.gov/
+          # -> -> -> -> -> -> -> ->
+
+        - ...
+```
 
 ### user
 
