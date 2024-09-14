@@ -131,10 +131,12 @@ jobs:
 
 To use a regular file or a directory, use the following rule.
 
-If [`path`](#path) is a symlink, then it is followed.
+Note that:
 
-If [`path`](#path) is a directory (probably, after resolving symlinks), then its junctions, mounts
-and symlinks will be ignored.
+* If [`path`](#path) is a symlink, then it is followed;
+
+* If [`path`](#path) is a directory, then its junctions, mounts and symlinks will be ignored. The
+  rule is also true for symlinks pointing to directories.
 
 Structure:
 
