@@ -58,8 +58,7 @@ jobs:
 
 ### Job
 
-**Job** is a collection of uniquely named *tasks* that are compared in pairs for plagiarism.
-Therefore, if any *job* contains less than two *tasks*, it will be ignored.
+**Job** is a collection of uniquely named *tasks*.
 
 ```yaml
 ---
