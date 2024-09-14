@@ -14,23 +14,19 @@
   * [2.4. GitLab](#gitlab)
   * [2.5. HTTP](#http)
 
-* **[3. Examples](#examples)**
-  * [3.1. Simple Example](#simple-example)
-  * [3.2. Real-Life Example](#real-life-example)
-
-* **[4. Attributes](#attributes)**
-  * [4.1. branch](#branch)
-  * [4.2. commit](#commit)
-  * [4.3. host](#host)
-  * [4.4. jobs](#jobs)
-  * [4.5. mime](#mime)
-  * [4.6. name](#name)
-  * [4.7. path](#path)
-  * [4.8. repo](#repo)
-  * [4.9. tag](#tag)
-  * [4.10. tasks](#tasks)
-  * [4.11. url](#url)
-  * [4.12. user](#user)
+* **[3. Attributes](#attributes)**
+  * [3.1. branch](#branch)
+  * [3.2. commit](#commit)
+  * [3.3. host](#host)
+  * [3.4. jobs](#jobs)
+  * [3.5. mime](#mime)
+  * [3.6. name](#name)
+  * [3.7. path](#path)
+  * [3.8. repo](#repo)
+  * [3.9. tag](#tag)
+  * [3.10. tasks](#tasks)
+  * [3.11. url](#url)
+  * [3.12. user](#user)
 
 ## Definitions
 
@@ -268,72 +264,6 @@ jobs:
         # -> -> -> -> -> -> -> ->
 
         - ...
-```
-
-## Examples
-
-### Simple Example
-
-The following example demonstrates how to define the *workflow* document so that Bull-Terrier
-compares the contents of the `/home/linux/` directory with the contents of the
-[`cpython`](https://github.com/python/cpython) repository.
-
-```yaml
----
-jobs:
-    - name: Simple Example
-      tasks:
-        - name: Linus Torvalds
-          path: /home/linux/
-
-        - name: Guido van Rossum
-          host: GitHub
-          user: python
-          repo: cpython
-```
-
-### Real-Life Example
-
-The following example demonstrates how Bull-Terrier can be used in an academic environment. Imagine
-that students were asked to solve two problems in their homework. For example, to implement
-functions for calculating factorials and Fibonacci numbers.
-
-```yaml
----
-jobs:
-    - name: A. Factorial
-      tasks:
-        - name: Captain Jack Sparrow
-          host: GitHub
-          user: johnny-depp
-          repo: factorial
-
-        - name: Hector Barbossa
-          host: GitLab
-          user: geoffrey-rush
-          repo: factorial
-
-        - name: Davy Jones
-          host: Bitbucket
-          user: bill-nighy
-          repo: factorial
-
-    - name: B. Fibonacci
-      tasks:
-        - name: Captain Jack Sparrow
-          host: GitHub
-          user: johnny-depp
-          repo: fibonacci
-
-        - name: Hector Barbossa
-          host: GitLab
-          user: geoffrey-rush
-          repo: fibonacci
-
-        - name: Davy Jones
-          host: Bitbucket
-          user: bill-nighy
-          repo: fibonacci
 ```
 
 ## Attributes
