@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 EXIT_FAILURE: Final[int] = 1
 
 
-def get_module_name(pypath: "Path") -> str:
+def get_module_name(python_module: "Path") -> str:
     """Convert the `Python` path to a module name."""
-    return pypath.with_suffix("").as_posix().replace("/", ".")
+    return python_module.with_suffix("").as_posix().replace("/", ".")
 
 
 def main() -> None:
