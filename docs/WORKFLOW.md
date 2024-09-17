@@ -102,7 +102,7 @@ Structure:
 * [`user`](#user) : *string* : *required*;
 * [`repo`](#repo) : *string* : *required*;
 * [`branch`](#branch) : [*refname*](DTYPES.md#refname) : *optional*;
-* [`commit`](#commit) : [*sha1*](DTYPES.md#sha1) : *optional*;
+* [`commit`](#commit) : [*sha-1*](DTYPES.md#sha-1) : *optional*;
 * [`tag`](#tag) : [*refname*](DTYPES.md#refname) : *optional*.
 
 ```yaml
@@ -182,7 +182,7 @@ Structure:
 * [`user`](#user) : *string* : *required*;
 * [`repo`](#repo) : *string* : *required*;
 * [`branch`](#branch) : [*refname*](DTYPES.md#refname) : *optional*;
-* [`commit`](#commit) : [*sha1*](DTYPES.md#sha1) : *optional*;
+* [`commit`](#commit) : [*sha-1*](DTYPES.md#sha-1) : *optional*;
 * [`tag`](#tag) : [*refname*](DTYPES.md#refname) : *optional*.
 
 ```yaml
@@ -216,7 +216,7 @@ Structure:
 * [`user`](#user) : *string* : *required*;
 * [`repo`](#repo) : *string* : *required*;
 * [`branch`](#branch) : [*refname*](DTYPES.md#refname) : *optional*;
-* [`commit`](#commit) : [*sha1*](DTYPES.md#sha1) : *optional*;
+* [`commit`](#commit) : [*sha-1*](DTYPES.md#sha-1) : *optional*;
 * [`tag`](#tag) : [*refname*](DTYPES.md#refname) : *optional*.
 
 ```yaml

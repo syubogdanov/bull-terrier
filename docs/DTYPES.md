@@ -7,7 +7,7 @@
   * [1.2. mime](#mime)
   * [1.3. path](#path)
   * [1.4. refname](#refname)
-  * [1.5. sha1](#sha1)
+  * [1.5. sha-1](#sha-1)
 
 ## Data Types
 
@@ -51,8 +51,8 @@
 
 * See the [documentation](https://git-scm.com/docs/git-check-ref-format).
 
-### `sha1`
+### `sha-1`
 
 **Type**: `string`
 
-...
+**Description**: Represents a `SHA-1` hash.
