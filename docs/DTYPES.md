@@ -23,10 +23,6 @@
 * Host is required;
 * Maximum length: `2083`.
 
-**See Also**:
-
-* [`pydantic.HttpUrl`](https://docs.pydantic.dev/latest/api/networks/#pydantic.networks.HttpUrl).
-
 ### `mime`
 
 **Type**: `literal-string`
@@ -44,10 +40,6 @@
 * Normalization is not required;
 * Relative paths are allowed;
 * Home directories are expanded.
-
-**See Also**:
-
-* [`pathlib.Path`](https://docs.python.org/3/library/pathlib.html#pathlib.Path).
 
 ### `refname`
 
