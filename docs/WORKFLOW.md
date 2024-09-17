@@ -247,7 +247,7 @@ specify [`mime`](#mime).
 Structure:
 
 * [`name`](#name) : *string* : *required*;
-* [`url`](#url) : [*url*](DTYPES.md#url) : *required*;
+* [`url`](#url) : [*http-url*](DTYPES.md#http-url) : *required*;
 * [`mime`](#mime) : [*mime*](DTYPES.md#mime) : *optional*.
 
 ```yaml
