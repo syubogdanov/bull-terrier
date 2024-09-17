@@ -23,11 +23,49 @@
 * Host is required;
 * Maximum length: `2083`.
 
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: ...
+        # -> -> -> -> -> -> -> ->
+          url: https://example.com
+        # -> -> -> -> -> -> -> ->
+          mime: ...
+
+        - ...
+```
+
 ### `mime`
 
 **Type**: `literal-string`
 
-...
+Values:
+
+* `...`;
+* `...`;
+* `...`.
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: ...
+          url: ...
+          # -> -> -> -> -> -> -> ->
+          mime: application/gzip
+          # -> -> -> -> -> -> -> ->
+
+        - ...
+```
+
+**Description**: Represents [MIME](https://en.wikipedia.org/wiki/MIME) types.
 
 ### `path`
 
@@ -41,6 +79,21 @@
 * Relative paths are allowed;
 * Home directories are expanded.
 
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: ...
+          # -> -> -> -> -> -> -> ->
+          path: ~/bull/../terrier/
+          # -> -> -> -> -> -> -> ->
+
+        - ...
+```
+
 ### `refname`
 
 **Type**: `string`
@@ -51,8 +104,44 @@
 
 * See the [documentation](https://git-scm.com/docs/git-check-ref-format).
 
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: ...
+          host: ...
+          user: ...
+          repo: ...
+          # -> -> -> -> -> -> -> ->
+          branch: python-dev
+          # -> -> -> -> -> -> -> ->
+
+        - ...
+```
+
 ### `sha-1`
 
 **Type**: `string`
 
-**Description**: Represents a `SHA-1` hash.
+**Description**: Represents a [`SHA-1`](https://en.wikipedia.org/wiki/SHA-1) hash.
+
+```yaml
+---
+jobs:
+    - name: ...
+      tasks:
+        - ...
+
+        - name: ...
+          host: ...
+          user: ...
+          repo: ...
+          # -> -> -> -> -> -> -> ->
+          commit: dea4ea046a6778c845edc4b6a916bc9f7699b82c
+          # -> -> -> -> -> -> -> ->
+
+        - ...
+```
