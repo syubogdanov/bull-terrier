@@ -23,6 +23,8 @@
 * Host is required;
 * Maximum length: `2083`.
 
+**Example**:
+
 ```yaml
 ---
 jobs:
@@ -43,11 +45,45 @@ jobs:
 
 **Type**: `literal-string`
 
-Values:
+**Description**: Represents [MIME](https://en.wikipedia.org/wiki/MIME) types.
 
-* `...`;
-* `...`;
-* `...`.
+**Values**:
+
+* `application/gzip`;
+* `application/vnd.rar`;
+* `application/x-7z-compressed`;
+* `application/x-bzip`;
+* `application/x-bzip2`;
+* `application/x-rar-compressed`;
+* `application/x-tar`;
+* `application/x-zip-compressed`;
+* `application/zip`;
+* `text/css`;
+* `text/csv`;
+* `text/html`;
+* `text/javascript`;
+* `text/markdown`;
+* `text/php`;
+* `text/plain`;
+* `text/rtf`;
+* `text/x-asm`;
+* `text/x-c`;
+* `text/x-c++`;
+* `text/x-csharp`;
+* `text/x-go`;
+* `text/x-java-source`;
+* `text/x-lua`;
+* `text/x-markdown`;
+* `text/x-perl`;
+* `text/x-python`;
+* `text/x-r`;
+* `text/x-rustsrc`;
+* `text/x-shellscript`;
+* `text/x-sql`;
+* `text/x-yaml`;
+* `text/xml`.
+
+**Example**:
 
 ```yaml
 ---
@@ -65,8 +101,6 @@ jobs:
         - ...
 ```
 
-**Description**: Represents [MIME](https://en.wikipedia.org/wiki/MIME) types.
-
 ### `path`
 
 **Type**: `string`
@@ -78,6 +112,8 @@ jobs:
 * Normalization is not required;
 * Relative paths are allowed;
 * Home directories are expanded.
+
+**Example**:
 
 ```yaml
 ---
@@ -104,6 +140,8 @@ jobs:
 
 * See the [documentation](https://git-scm.com/docs/git-check-ref-format).
 
+**Example**:
+
 ```yaml
 ---
 jobs:
@@ -127,6 +165,8 @@ jobs:
 **Type**: `string`
 
 **Description**: Represents a [`SHA-1`](https://en.wikipedia.org/wiki/SHA-1) hash.
+
+**Example**:
 
 ```yaml
 ---
