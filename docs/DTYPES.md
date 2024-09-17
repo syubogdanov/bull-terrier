@@ -25,7 +25,7 @@
 
 ### mime
 
-Type: `literal-string`
+**Type:** `literal-string`
 
 ...
 
@@ -37,12 +37,12 @@ Type: `literal-string`
 
 ### refname
 
-Type: `string`
+**Type:** `string`
 
 ...
 
 ### sha1
 
-Type: `string`
+**Type:** `string`
 
 ...
