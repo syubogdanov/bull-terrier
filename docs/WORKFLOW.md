@@ -268,7 +268,7 @@ jobs:
 
 ## Attributes
 
-### branch
+### `branch`
 
 Specifies the [branch](https://git-scm.com/docs/git-branch) to be used.
 
@@ -290,7 +290,7 @@ jobs:
         - ...
 ```
 
-### commit
+### `commit`
 
 Specifies the [commit](https://git-scm.com/docs/git-commit) to be used.
 
@@ -312,7 +312,7 @@ jobs:
         - ...
 ```
 
-### host
+### `host`
 
 Specifies the name of the source-code-hosting platform to be used.
 
@@ -333,7 +333,7 @@ jobs:
         - ...
 ```
 
-### jobs
+### `jobs`
 
 Specifies the list of [*jobs*](#job).
 
@@ -347,7 +347,7 @@ jobs:
 # -> -> -> -> -> -> -> ->
 ```
 
-### mime
+### `mime`
 
 Specifies the [MIME](https://en.wikipedia.org/wiki/MIME).
 
@@ -367,7 +367,7 @@ jobs:
         - ...
 ```
 
-### name
+### `name`
 
 Specifies the name of a [job](#job) or a [task](#task).
 
@@ -396,7 +396,7 @@ jobs:
         - ...
 ```
 
-### path
+### `path`
 
 Specifies the path in the file system.
 
@@ -415,7 +415,7 @@ jobs:
         - ...
 ```
 
-### repo
+### `repo`
 
 Specifies the repository ([Bitbucket](https://bitbucket.org/), [GitHub](https://github.com/)) or
 project ([GitLab](https://gitlab.com/)).
@@ -454,7 +454,7 @@ jobs:
         - ...
 ```
 
-### tag
+### `tag`
 
 Specifies the [tag](https://git-scm.com/docs/git-tag) to be used.
 
@@ -476,7 +476,7 @@ jobs:
         - ...
 ```
 
-### tasks
+### `tasks`
 
 Specifies the list of [*tasks*](#task).
 
@@ -496,7 +496,7 @@ jobs:
     - ...
 ```
 
-### url
+### `url`
 
 Specifies the URL to be used.
 
@@ -515,7 +515,7 @@ jobs:
         - ...
 ```
 
-### user
+### `user`
 
 Specifies the username ([GitLab](https://gitlab.com/), [GitHub](https://github.com/)) or
 workspace ([Bitbucket](https://bitbucket.org/)).
