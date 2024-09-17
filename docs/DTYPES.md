@@ -23,9 +23,13 @@
 * Host is required;
 * Maximum length: `2083`.
 
+**See Also**:
+
+* [`pydantic.HttpUrl`](https://docs.pydantic.dev/latest/api/networks/#pydantic.networks.HttpUrl).
+
 ### `mime`
 
-**Type:** `literal-string`
+**Type**: `literal-string`
 
 ...
 
@@ -33,7 +37,7 @@
 
 **Type**: `string`
 
-**Description:** Represents a file system path.
+**Description**: Represents a file system path.
 
 **Constraints**:
 
@@ -41,11 +45,15 @@
 * Relative paths are allowed;
 * Home directories are expanded.
 
+**See Also**:
+
+* [`pathlib.Path`](https://docs.python.org/3/library/pathlib.html#pathlib.Path).
+
 ### `refname`
 
-**Type:** `string`
+**Type**: `string`
 
-**Description:** Represents a `git` reference name.
+**Description**: Represents a `git` reference name.
 
 **Constraints**:
 
@@ -53,6 +61,6 @@
 
 ### `sha1`
 
-**Type:** `string`
+**Type**: `string`
 
 ...
