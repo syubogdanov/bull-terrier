@@ -35,11 +35,21 @@
 
 **Description:** Represents a file system path.
 
+**Constraints**:
+
+* Normalization is not required;
+* Relative paths are allowed;
+* Home directories are expanded.
+
 ### refname
 
 **Type:** `string`
 
-...
+**Description:** Represents a `git` reference name.
+
+**Constraints**:
+
+* See the [documentation](https://git-scm.com/docs/git-check-ref-format).
 
 ### sha1
 
