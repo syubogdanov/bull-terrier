@@ -11,7 +11,7 @@
 
 ## Data Types
 
-### http-url
+### `http-url`
 
 **Type**: `string`
 
@@ -23,13 +23,13 @@
 * Host is required;
 * Maximum length: `2083`.
 
-### mime
+### `mime`
 
 **Type:** `literal-string`
 
 ...
 
-### path
+### `path`
 
 **Type**: `string`
 
@@ -41,7 +41,7 @@
 * Relative paths are allowed;
 * Home directories are expanded.
 
-### refname
+### `refname`
 
 **Type:** `string`
 
@@ -51,7 +51,7 @@
 
 * See the [documentation](https://git-scm.com/docs/git-check-ref-format).
 
-### sha1
+### `sha1`
 
 **Type:** `string`
 
