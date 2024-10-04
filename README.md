@@ -4,8 +4,7 @@
     </a>
 </h2>
 
-**Bull-Terrier** is cross-platform plagiarism detection software based on the method of
-*non-singular likelihood estimation*. Beware... it bites!..
+**Bull-Terrier** is cross-platform plagiarism detection software. Beware... it bites!..
 
 ## Getting Started
 
