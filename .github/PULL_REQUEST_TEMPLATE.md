@@ -28,7 +28,6 @@
 ### Release Pull Request
 
 - [ ] I have made edits to `.github/ISSUE_TEMPLATE/bug.yaml`.
-- [ ] I have made edits to `pyproject.toml`.
 - [ ] I have made edits to `README.md` or deliberately left it unchanged.
 
 ## Comments
